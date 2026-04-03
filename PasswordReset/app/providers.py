@@ -109,7 +109,7 @@ class Email():
             msg['Subject'] = self.msg_subject
             msg['From'] = self.smtp_from
             msg['To'] = ", ".join(recipients)
-            s = smtplib.SMTP("{0}:{1}".format(self.smtp_server_addr, self.smtp_server_port))
+            s = smtplib.SMTP(self.smtp_server_addr, self.smtp_server_port)
             if self.smtp_server_tls:
                 s.ehlo()
                 s.starttls(tuple())
